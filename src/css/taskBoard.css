@@ -1,0 +1,39 @@
+.taskBoard {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.taskBoard-Column {
+    position: relative;
+    width: 25%;
+    background-color: #EEE;
+
+}
+.taskBoard-TodoTitle {
+    font-size: 2em;
+    margin-left: 1em;
+}
+.taskBoard-TodoElement {
+    background-color: #FFF;
+    position: relative;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    margin-top: 0.1em;
+    border-radius: 0.3em;
+    padding: 1.5em;
+    box-shadow: 0 0 0.1em 0.05em #CCC inset;
+}
+.taskBoard-element-button {
+    margin: 0.1em;
+}
+.taskBoard-darker {
+    background-color: #DDD;
+}
+.taskBoard-element-title {
+    font-size: 1.1em;
+}
+.taskBoard-element-type {
+    font-size: 0.8em;
+    color: #555;
+}
