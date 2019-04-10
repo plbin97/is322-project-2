@@ -37,7 +37,18 @@ class TaskBoard extends Component{
             } 
         }
 
-        return (
+        let manu = (
+            <div className="btn-group taskBoard-dropManu btn-block">
+                <button type="button" className="btn btn-light btn-block dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    Action
+                </button>
+                <div className="dropdown-menu">
+                    <button className="dropdown-item" type="button">To do</button>
+                </div>
+            </div>
+        );
+        let taskBoard = (
             <div className="taskBoard">
                 <div className="taskBoard-Column taskBoard-darker">
                     <div className="taskBoard-TodoTitle">
@@ -64,7 +75,9 @@ class TaskBoard extends Component{
                     <div>{DoneTask}</div>
                 </div>
             </div>
-        )
+        );
+
+        return [manu,taskBoard]
     }
 }
 
