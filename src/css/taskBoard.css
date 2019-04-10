@@ -36,10 +36,25 @@
     font-size: 0.8em;
     color: #555;
 }
+
+.taskBoard-dropManu {
+    width: 98%;
+}
+
+#taskBoard-dropManu-button {
+    font-size: 1.7em;
+}
+
 @media (min-width: 900px) {
     .taskBoard {
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
+    }
+    .taskBoard-dropManu-frame {
+        display: none !important;
+    }
+    .taskBoard-Column {
+        display: block !important;
     }
 }
 
@@ -48,10 +63,28 @@
         display: grid;
         grid-template-columns: 50% 50%;
     }
+    .taskBoard-dropManu-frame {
+        display: none !important;
+    }
+    .taskBoard-Column {
+        display: block !important;
+    }
 }
 
 @media (max-width : 500px) {
     .taskBoard {
         display: block;
     }
+    .taskBoard-dropManu-frame {
+        display: block;
+    }
+    .taskBoard-Column {
+        display: none;
+        min-height: 92%;
+        padding-top: 1em;
+    }
+    .taskBoard-TodoTitle {
+        display: none;
+    }
+
 }

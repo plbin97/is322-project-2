@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Element from './taskElements';
-
+import {toTodo,toInProgress,toReview,toDone} from './changeColunmInSmallScreen';
 
 class TaskBoard extends Component{
     render() {
@@ -38,37 +38,43 @@ class TaskBoard extends Component{
         }
 
         let manu = (
-            <div className="btn-group taskBoard-dropManu btn-block">
-                <button type="button" className="btn btn-light btn-block dropdown-toggle" data-toggle="dropdown"
+            <div className="btn-group btn-block taskBoard-dropManu-frame">
+                <button id="taskBoard-dropManu-button" type="button" className="btn btn-light btn-lg btn-block dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                    Action
+                    To do
                 </button>
-                <div className="dropdown-menu">
-                    <button className="dropdown-item" type="button">To do</button>
+                <div className="dropdown-menu taskBoard-dropManu">
+                    <button className="dropdown-item btn-lg" type="button" onClick={toTodo}>To do</button>
+                    <div className="dropdown-divider"></div>
+                    <button className="dropdown-item btn-lg" type="button" onClick={toInProgress}>In Progress</button>
+                    <div className="dropdown-divider"></div>
+                    <button className="dropdown-item btn-lg" type="button" onClick={toReview}>Review</button>
+                    <div className="dropdown-divider"></div>
+                    <button className="dropdown-item btn-lg" type="button" onClick={toDone}>Done</button>
                 </div>
             </div>
         );
         let taskBoard = (
             <div className="taskBoard">
-                <div className="taskBoard-Column taskBoard-darker">
+                <div id="taskBoard-todoColumn" className="taskBoard-Column taskBoard-darker" style={{display: "block"}}>
                     <div className="taskBoard-TodoTitle">
                         To do
                     </div>
                     <div>{todoTask}</div>
                 </div>
-                <div className="taskBoard-Column">
+                <div id="taskBoard-inProgressColumn" className="taskBoard-Column">
                     <div className="taskBoard-TodoTitle">
                         In Progress
                     </div>
                     <div>{inProgressTask}</div>
                 </div>
-                <div className="taskBoard-Column taskBoard-darker">
+                <div id="taskBoard-reviewColumn" className="taskBoard-Column taskBoard-darker">
                     <div className="taskBoard-TodoTitle">
                         Review
                     </div>
                     <div>{ReviewTask}</div>
                 </div>
-                <div className="taskBoard-Column">
+                <div id="taskBoard-doneColumn" className="taskBoard-Column">
                     <div className="taskBoard-TodoTitle">
                         Done
                     </div>
