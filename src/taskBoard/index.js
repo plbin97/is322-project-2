@@ -55,7 +55,7 @@ class TaskBoard extends Component{
             </div>
         );
         let taskBoard = (
-            <div className="taskBoard">
+            <div id="gridView" className="taskBoard">
                 <div id="taskBoard-todoColumn" className="taskBoard-Column taskBoard-darker" style={{display: "block"}}>
                     <div className="taskBoard-TodoTitle">
                         To do
