@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TaskBoard from './taskBoard/index';
+import axios from 'axios';
 
 class App extends Component {
 
@@ -13,71 +14,12 @@ class App extends Component {
   }
 
   getData() {
-    this.setState({
-      tasks: [
-        {
-          "id": 1,
-          "title": "Install React",
-          "type": "task",
-          "column": "done"
-        },
-        {
-          "id": 2,
-          "title": "Setup GitHub",
-          "type": "task",
-          "column": "review"
-        },
-        {
-          "id": 3,
-          "title": "Invite Collaborators",
-          "type": "task",
-          "column": "done"
-        },
-        {
-          "id": 4,
-          "title": "Install Dependencies",
-          "type": "task",
-          "column": "in-progress"
-        },
-        {
-          "id": 5,
-          "title": "Create App Component",
-          "type": "feature",
-          "column": "review"
-        },
-        {
-          "id": 6,
-          "title": "Plan Component Diagram",
-          "type": "task",
-          "column": "review"
-        },
-        {
-          "id": 7,
-          "title": "Create Grid View",
-          "type": "feature",
-          "column": "in-progress"
-        },
-        {
-          "id": 8,
-          "title": "Create List View",
-          "type": "feature",
-          "column": "todo"
-        },
-        {
-          "id": 9,
-          "title": "Create Add Form",
-          "type": "feature",
-          "column": "todo"
-        },
-        {
-          "id": 10,
-          "title": "App Crashs! :(",
-          "type": "bug",
-          "column": "done"
-        }
-      ],
-      newTaskID: 11
-    })
+    axios.get('http://my-json-server.typicode.com/KingLogar/FakeDB1/posts')
+        .then(response => {
+          this.setState({ tasks: response.data });
+        }).catch(error => {
+      this.setState({ errorMessage: error.message });
+    });
   }
 
   taskMovingAction = {
