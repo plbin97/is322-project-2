@@ -1,5 +1,5 @@
 function toGridView() {
-    document.getElementById("gridView").style.display = "block";
+    document.getElementById("gridView").style.display = "grid";
     document.getElementById("taskList").style.display = "none";
     document.getElementById("addTask").style.display = "none";
 }
