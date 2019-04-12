@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {toGridView} from "./navbarNavigation";
 
 class Add extends Component{
 
@@ -14,19 +15,21 @@ class Add extends Component{
     render(){
 
         return (
-
-            <form className="task-input form-group" onSubmit={this.onFormSubmit}>
-                <label htmlFor="newTask">Enter New Task</label>
+            <body>
+            <form onSubmit={this.onFormSubmit}>
+                <label htmlFor="newTask" className="title">Enter New Task</label>
                 <br />
-                Task Name: <br /><input type="text" className="form-control" name="newTask" value={this.state.newTask}
+                Task Name: <br /> <input type="text" name="newTask" value={this.state.newTask}
                                   onChange={(e) => this.setState({ newTask: e.target.value })} ></input> <br />
-                Type: <select id="type" value={this.state.type} onChange={(e) => this.setState({ type: e.target.value })}>
+                Type: <br /> <select id="type" value={this.state.type} onChange={(e) => this.setState({ type: e.target.value })}>
+                <option value="default">Select a Type...</option>
                 <option value="task">Task</option>
                 <option value="bug">Bug</option>
                 <option value="feature">Feature</option>
-                </select> <br />
-                <button id="add" type="submit">Add</button>
+                </select> <br /> <br />
+                <button type="submit" className="taskBoard-element-button btn btn-outline-primary btn-sm" onClick={toGridView}>Add</button>
             </form>
+            </body>
         );
     };
 }
