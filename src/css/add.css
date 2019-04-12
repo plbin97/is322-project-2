@@ -1,0 +1,42 @@
+body{
+    background-color: #DDD;
+}
+form {
+    border-radius: 25px;
+    border: solid black thin;
+    background-color: white;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+input {
+    border-radius: 25px;
+    display: inline;
+    width: 98%;
+}
+select{
+    border-radius: 25px;
+}
+.title {
+    font-size: 30px;
+}
+
+@media (min-width: 900px) {
+    .title {
+        font-size: 30px;
+    }
+
+}
+
+@media (max-width : 900px) and (min-width: 500px) {
+    .title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width : 500px) {
+    .title {
+        font-size: 20px;
+    }
+}
