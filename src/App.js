@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TaskBoard from './taskBoard/index';
 import axios from 'axios';
+import Add from './Add';
 import { toGridView, toTaskList, toAddTask } from './navbarNavigation';
 import TaskList from "./taskList/TaskList";
 
@@ -81,7 +82,7 @@ class App extends Component {
     }
   };
 
-  newTask(taskName,type) {
+  newTask = (taskName,type) => {
     console.log(this.state.tasks);
     this.state.tasks.push({
       id: this.state.newTaskID,
@@ -93,7 +94,6 @@ class App extends Component {
       newTaskID: this.state.newTaskID + 1
     });
   }
-
 
   render() {
     let navbar = (
@@ -123,7 +123,9 @@ class App extends Component {
 
 
     let addTask = (
-        <div id="addTask" style={{display:"none"}}>Add Task Here</div>
+        <div id="addTask" style={{display:"none"}}>
+          <Add onSubmit={this.newTask} />
+        </div>
     );
 
     return [
