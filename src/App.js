@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TaskBoard from './taskBoard/index';
 import axios from 'axios';
 import { toGridView, toTaskList, toAddTask } from './navbarNavigation';
+import TaskList from "./taskList/TaskList";
 
 class App extends Component {
 
@@ -119,9 +120,7 @@ class App extends Component {
         </nav>
     );
 
-    let taskList = (
-        <div id="taskList" style={{display:"none"}}>Task List Here</div>
-    );
+
 
     let addTask = (
         <div id="addTask" style={{display:"none"}}>Add Task Here</div>
@@ -130,7 +129,9 @@ class App extends Component {
     return [
         navbar,
         <TaskBoard t={this.state.tasks} action={this.taskMovingAction}/>,
-        taskList,
+        <div id="taskList" style={{display:"none"}}>
+          <TaskList tasks={this.state.tasks} />
+        </div>,
         addTask
     ];
   }
