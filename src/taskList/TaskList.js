@@ -109,12 +109,11 @@ class TaskList extends React.Component {
     return (
 
         <div id="sort"> { sort }
-      <ul className="task-list list-group">
-        { taskItems }
-      </ul>
+          <ul className="task-list list-group">
+            { taskItems }
+          </ul>
         </div>
     )
   }
 }
-
 export default TaskList;
