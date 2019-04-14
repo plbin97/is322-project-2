@@ -120,7 +120,11 @@ class App extends Component {
         </nav>
     );
 
-
+    let taskList = (
+        <div id="taskList" style={{display:"none"}}>
+            <TaskList tasks={this.state.tasks} />
+        </div>
+    );
 
     let addTask = (
         <div id="addTask" style={{display:"none"}}>
@@ -131,9 +135,7 @@ class App extends Component {
     return [
         navbar,
         <TaskBoard t={this.state.tasks} action={this.taskMovingAction}/>,
-        <div id="taskList" style={{display:"none"}}>
-          <TaskList tasks={this.state.tasks} />
-        </div>,
+        taskList,
         addTask
     ];
   }

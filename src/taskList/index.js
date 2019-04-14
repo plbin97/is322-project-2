@@ -8,7 +8,7 @@ class TaskList extends Component{
         for (let i = 0;i < tasks.length;i++){
             let temp = (
                 <tr>{tasks[i].title}</tr>
-            )
+            );
             arr.push(temp);
         }
         let table = (
@@ -40,11 +40,9 @@ class TaskList extends Component{
                     <option value="Review">Review</option>
                     <option value="Done">Done</option>
                 </select>
-            </div>);
-        let renderStuffs = [table,sort];
-        return (
-            <div id="taskList">{renderStuffs}</div>
-        )
+            </div>
+        </div>);
+        return (table, sort);
     }
 }
 
