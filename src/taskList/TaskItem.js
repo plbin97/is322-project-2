@@ -4,6 +4,12 @@ const TaskItem = props => {
   return (
     <li className="list-group-item">
       { props.task.title }
+      <div> {props.task.type}
+
+      </div>
+      <div>
+        {props.task.column}
+      </div>
       <button type="button"
               onClick={() => props.markDone(props.task)}
               className="btn btn-primary" style={{ float: 'right' }}>
