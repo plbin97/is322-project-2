@@ -39,11 +39,11 @@ class TaskList extends React.Component {
 
     //For *whatever reason*, this deletes half the list at once.
     //This section is now dubbed Thanos.
-    for(let i = 0; i < taskList.length; i++){
-      if(taskList[i].type !== this.state.filterA & taskList[i].column !== this.state.filterB){
-        taskList.splice(i, 1);
-      }
-    }
+    //for(let i = 0; i < taskList.length; i++){
+     // if(taskList[i].type !== this.state.filterA & taskList[i].column !== this.state.filterB){
+        //taskList.splice(i, 1);
+     // }
+    //}
 
     this.setState((tasks) =>{
       return {tasks: taskList}
